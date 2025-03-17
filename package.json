@@ -1,0 +1,78 @@
+{
+  "name": "vue-drag-and-resize",
+  "version": "1.0.1",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/",
+    "story:dev": "histoire dev --open",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "sass": "^1.85.1",
+    "vue": "^3.5.13"
+  },
+  "author": "Daisuke Jigen (https://github.com/DaisukeJigen)",
+  "funding": {
+    "type": "individual",
+    "url": "https://ko-fi.com/daisukejigen"
+  },
+  "devDependencies": {
+    "@histoire/plugin-vue": "^1.0.0-alpha.2",
+    "@tsconfig/node22": "^22.0.0",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.13.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.4.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.20.1",
+    "eslint-plugin-perfectionist": "^4.9.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "histoire": "^1.0.0-alpha.2",
+    "jiti": "^2.4.2",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.5.1",
+    "typescript": "~5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^2.2.2"
+  },
+  "description": "Vue3 component that can be dragged and resized",
+  "main": "dist/vue-drag-and-resize.umd.cjs",
+  "unpkg": "dist/vue-drag-and-resize.umd.cjs",
+  "module": "dist/vue-drag-and-resize.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-drag-and-resize.js",
+      "require": "./dist/vue-drag-and-resize.umd.cjs"
+    },
+    "./vue-drag-and-resize.css": {
+      "import": "./dist/vue-drag-and-resize.css",
+      "require": "./dist/vue-drag-and-resize.css"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaisukeJigen/vue-drag-and-resize.git"
+  },
+  "keywords": [
+    "vue3",
+    "drag",
+    "resize",
+    "component"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaisukeJigen/vue-drag-and-resize/issues"
+  },
+  "homepage": "https://github.com/DaisukeJigen/vue-drag-and-resize#readme"
+}
