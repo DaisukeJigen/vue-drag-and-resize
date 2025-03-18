@@ -68,7 +68,7 @@ Default: `0`
 The distance (in px) from the bottom of the parent that the component can go.
 
 ```html
-<vue-draggable-resizable :buttom-gutter="20"></vue-draggable-resizable>
+<VueDragAndResize :buttom-gutter="20"></VueDragAndResize>
 ```
 
 #### dragDirections
@@ -81,7 +81,7 @@ Options: `x, y`
 The directions in which the component and be moved.
 
 ```html
-<vue-draggable-resizable :drag-directions="['x','y']"></vue-draggable-resizable>
+<VueDragAndResize :drag-directions="['x','y']"></>VueDragAndResize>
 ```
 
 #### draggable
@@ -93,7 +93,7 @@ Default: `true`
 If the component is draggable
 
 ```html
-<vue-draggable-resizable :draggable="true"></vue-draggable-resizable>
+<VueDragAndResize :draggable="true"></VueDragAndResize>
 ```
 
 #### dragOn
@@ -105,7 +105,7 @@ Default: ``
 CSS selector for the element within the component to drag on.  Defaults to '', or the component itself.
 
 ```html
-<vue-draggable-resizable :dragOn="#ElemDiv"></vue-draggable-resizable>
+<VueDragAndResize :dragOn="#ElemDiv"></VueDragAndResize>
 ```
 
 #### grabWidth
@@ -117,7 +117,7 @@ Default: `0`
 The buffer from the edge where a grab resize grab can happen (in px)
 
 ```html
-<vue-draggable-resizable :grab-width="5"></vue-draggable-resizable>
+<VueDragAndResize :grab-width="5"></VueDragAndResize>
 ```
 
 #### height
@@ -130,7 +130,7 @@ The starting height of the component (in px).<br>
 A value of -1 will cause a calculation based on 'auto'
 
 ```html
-<vue-draggable-resizable :height="250"></vue-draggable-resizable>
+<VueDragAndResize :height="250"></VueDragAndResize>
 ```
 
 #### left
@@ -142,7 +142,7 @@ Default: '0'
 The starting left position of the component (in px).
 
 ```html
-<vue-draggable-resizable :left="250"></vue-draggable-resizable>
+<VueDragAndResize :left="250"></VueDragAndResize>
 ```
 
 #### leftGutter
@@ -154,7 +154,7 @@ Default: `0`
 The distance (in px) from the left of the parent that the component can go.
 
 ```html
-<vue-draggable-resizable :left-gutter="20"></vue-draggable-resizable>
+<VueDragAndResize :left-gutter="20"></VueDragAndResize>
 ```
 
 #### position
@@ -168,7 +168,7 @@ The CSS position mode for the component.<br/>
 If absolute, and nested in another vue-draggable-resizable, it will still be bound by the parents borders
 
 ```html
-<vue-draggable-resizable :position="absolute"></vue-draggable-resizable>
+<VueDragAndResize :position="absolute"></VueDragAndResize>
 ```
 
 #### resizeable
@@ -180,7 +180,7 @@ Default: `true`
 If the component is resizeable.
 
 ```html
-<vue-draggable-resizable :resizable="true"></vue-draggable-resizable>
+<VueDragAndResize :resizable="true"></VueDragAndResize>
 ```
 
 #### resizeDirections
@@ -193,7 +193,7 @@ Options: `'l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr'`
 The directions in which the component and be resized.
 
 ```html
-<vue-draggable-resizable :resize-directions="['l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr']"></vue-draggable-resizable>
+<VueDragAndResize :resize-directions="['l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr']"></VueDragAndResize>
 ```
 
 #### rightGutter
@@ -205,7 +205,7 @@ Default: `0`
 The distance (in px) from the right of the parent that the component can go.
 
 ```html
-<vue-draggable-resizable :right-gutter="20"></vue-draggable-resizable>
+<VueDragAndResize :right-gutter="20"></VueDragAndResize>
 ```
 
 #### top
@@ -217,7 +217,7 @@ Default: '0'
 The starting top position of the component (in px).
 
 ```html
-<vue-draggable-resizable :top="250"></vue-draggable-resizable>
+<VueDragAndResize :top="250"></VueDragAndResize>
 ```
 
 #### topGutter
@@ -229,7 +229,7 @@ Default: `0`
 The distance (in px) from the top of the parent that the component can go.
 
 ```html
-<vue-draggable-resizable :top-gutter="20"></vue-draggable-resizable>
+<VueDragAndResize :top-gutter="20"></VueDragAndResize>
 ```
 
 #### width
@@ -242,7 +242,7 @@ The starting width of the component (in px).<br>
 A value of -1 will cause a calculation based on 'auto'
 
 ```html
-<vue-draggable-resizable :width="250"></vue-draggable-resizable>
+<VueDragAndResize :width="250"></VueDragAndResize>
 ```
 
 ### Events
@@ -266,21 +266,21 @@ Response
 Called whenever the component starts being dragged.
 
 ```html
-<vue-draggable-resizable @dragging="onDragging">
+<VueDragAndResize @dragging="onDragging"></VueDragAndResize>
 ```
 #### drag-start
 
 Called whenever the component gets dragged.
 
 ```html
-<vue-draggable-resizable @drag-start="onDragStart">
+<VueDragAndResize @drag-start="onDragStart"></VueDragAndResize>
 ```
 #### drag-end
 
 Called whenever the component finishes being dragged.
 
 ```html
-<vue-draggable-resizable @drag-end="onDragEnd">
+<VueDragAndResize @drag-end="onDragEnd"></VueDragAndResize>
 ```
 
 #### resizing
@@ -302,21 +302,21 @@ Response
 Called whenever the component starts being dragged.
 
 ```html
-<vue-draggable-resizable @resizing="onResizing">
+<VueDragAndResize @resizing="onResizing"></VueDragAndResize>
 ```
 #### resize-start
 
 Called whenever the component gets dragged.
 
 ```html
-<vue-draggable-resizable @resize-start="onResizeStart">
+<VueDragAndResize @resize-start="onResizeStart"></VueDragAndResize>
 ```
 #### resize-end
 
 Called whenever the component finishes being dragged.
 
 ```html
-<vue-draggable-resizable @resize-end="onResizeEnd">
+<VueDragAndResize @resize-end="onResizeEnd"></VueDragAndResize>
 ```
 
 
