@@ -69,6 +69,7 @@ The distance (in px) from the bottom of the parent that the component can go.
 
 ```html
 <VueDragAndResize :buttom-gutter="20"></VueDragAndResize>
+<VueDragAndResize :buttom-gutter="20"></VueDragAndResize>
 ```
 
 #### dragDirections
@@ -94,6 +95,7 @@ If the component is draggable
 
 ```html
 <VueDragAndResize :draggable="true"></VueDragAndResize>
+<VueDragAndResize :draggable="true"></VueDragAndResize>
 ```
 
 #### dragOn
@@ -106,6 +108,7 @@ CSS selector for the element within the component to drag on.  Defaults to '', o
 
 ```html
 <VueDragAndResize :dragOn="#ElemDiv"></VueDragAndResize>
+<VueDragAndResize :dragOn="#ElemDiv"></VueDragAndResize>
 ```
 
 #### grabWidth
@@ -117,6 +120,7 @@ Default: `0`
 The buffer from the edge where a grab resize grab can happen (in px)
 
 ```html
+<VueDragAndResize :grab-width="5"></VueDragAndResize>
 <VueDragAndResize :grab-width="5"></VueDragAndResize>
 ```
 
@@ -131,6 +135,7 @@ A value of -1 will cause a calculation based on 'auto'
 
 ```html
 <VueDragAndResize :height="250"></VueDragAndResize>
+<VueDragAndResize :height="250"></VueDragAndResize>
 ```
 
 #### left
@@ -143,6 +148,7 @@ The starting left position of the component (in px).
 
 ```html
 <VueDragAndResize :left="250"></VueDragAndResize>
+<VueDragAndResize :left="250"></VueDragAndResize>
 ```
 
 #### leftGutter
@@ -154,6 +160,7 @@ Default: `0`
 The distance (in px) from the left of the parent that the component can go.
 
 ```html
+<VueDragAndResize :left-gutter="20"></VueDragAndResize>
 <VueDragAndResize :left-gutter="20"></VueDragAndResize>
 ```
 
@@ -169,6 +176,7 @@ If absolute, and nested in another VueDragAndResize, it will still be bound by t
 
 ```html
 <VueDragAndResize :position="absolute"></VueDragAndResize>
+<VueDragAndResize :position="absolute"></VueDragAndResize>
 ```
 
 #### resizeable
@@ -180,6 +188,7 @@ Default: `true`
 If the component is resizeable.
 
 ```html
+<VueDragAndResize :resizable="true"></VueDragAndResize>
 <VueDragAndResize :resizable="true"></VueDragAndResize>
 ```
 
@@ -194,6 +203,7 @@ The directions in which the component and be resized.
 
 ```html
 <VueDragAndResize :resize-directions="['l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr']"></VueDragAndResize>
+<VueDragAndResize :resize-directions="['l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr']"></VueDragAndResize>
 ```
 
 #### rightGutter
@@ -205,6 +215,7 @@ Default: `0`
 The distance (in px) from the right of the parent that the component can go.
 
 ```html
+<VueDragAndResize :right-gutter="20"></VueDragAndResize>
 <VueDragAndResize :right-gutter="20"></VueDragAndResize>
 ```
 
@@ -218,6 +229,7 @@ The starting top position of the component (in px).
 
 ```html
 <VueDragAndResize :top="250"></VueDragAndResize>
+<VueDragAndResize :top="250"></VueDragAndResize>
 ```
 
 #### topGutter
@@ -229,6 +241,7 @@ Default: `0`
 The distance (in px) from the top of the parent that the component can go.
 
 ```html
+<VueDragAndResize :top-gutter="20"></VueDragAndResize>
 <VueDragAndResize :top-gutter="20"></VueDragAndResize>
 ```
 
@@ -242,6 +255,7 @@ The starting width of the component (in px).<br>
 A value of -1 will cause a calculation based on 'auto'
 
 ```html
+<VueDragAndResize :width="250"></VueDragAndResize>
 <VueDragAndResize :width="250"></VueDragAndResize>
 ```
 
