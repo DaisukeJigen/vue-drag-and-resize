@@ -5,7 +5,7 @@ const p = ref('absolute')
 </script>
 
 <template>
-  <Story auto-props-disabled title="Nested components">
+  <Story auto-props-disabled title="Nested Components">
     <DragAndResize id="parent" :width="500" :height="600"><span>I can move and resize</span>
       <DragAndResize id="child" :width="200" :height="200" :position="p" :left="50" :top="100">
         <span>I can move and resize inside my parent</span>
@@ -31,7 +31,7 @@ const p = ref('absolute')
 </template>
 
 <docs lang="md">
-## Basic component
+## Nested components
 </docs>
 
 <style lang="scss">
@@ -42,6 +42,3 @@ const p = ref('absolute')
   border: 2px solid blue;
 }
 </style>
-
-
-<!-- TODO: Make absolute positioning stay within parent if parent also resizable draggable -->

@@ -1,6 +1,6 @@
 {
   "name": "vue-drag-and-resize",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "type": "module",
   "scripts": {
@@ -16,7 +16,6 @@
     "story:preview": "histoire preview"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
     "sass": "^1.85.1",
     "vue": "^3.5.13"
   },

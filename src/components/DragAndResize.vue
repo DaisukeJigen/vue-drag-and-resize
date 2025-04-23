@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import type { iBoundries, iCorners, iXY } from '@/interfaces'
+import type { iBoundries, iCorners, iXY, iZindexInfo } from '@/interfaces'
 
-import { computed, getCurrentInstance, nextTick, onBeforeMount, onMounted, ref, watch } from 'vue'
-const
-  borders = ref({ bottom: 0, left: 0, right: 0, top: 0 }),
+import { computed, getCurrentInstance, nextTick, onMounted, ref, watch } from 'vue'
+const borders = ref({ bottom: 0, left: 0, right: 0, top: 0 }),
   boundries = ref<iBoundries>(),
   clickedAtPosition = ref<iXY>({ x: 0, y: 0 }),
   collideBottom = computed(
@@ -69,8 +68,8 @@ const
   cssWidth = computed(() => size.value.x == -1 ? 'auto' : size.value.x + 'px'),
   divPos = ref<iXY>({ x: 0, y: 0 }),
   divPosAtDragStart = ref<iXY>({ x: 0, y: 0 }),
-    divPosWhenClicked = ref<iXY>({ x: 0, y: 0 }),
-  drag = () => {
+  divPosWhenClicked = ref<iXY>({ x: 0, y: 0 }),
+    drag = () => {
     emit('dragging')
     divPos.value = {
       x: props.dragDirections.includes('x')
@@ -325,14 +324,35 @@ const
     }
   },
   size = ref<iXY>({ x: 0, y: 0 }),
-    sizeAtResizeStart = ref<iXY>({ x: 0, y: 0 }),
-  thisDiv = computed(() => thisInstance?.vnode.el), thisInstance = getCurrentInstance()
+  sizeAtResizeStart = ref<iXY>({ x: 0, y: 0 }),
+  thisDiv = computed(() => thisInstance?.vnode.el),
+    thisInstance = getCurrentInstance(),
+   
+  zIndexAdjust = () => {
+    const dar = document.querySelectorAll(`.vueDragAndResize`)
+    if(dar.length > 1){
+    const divs = <iZindexInfo[]>[]
+    let z = 99999
+      dar.forEach((element: any) => {
+        if(element.getAttribute('data-uid') == thisInstance?.uid){
+          element.style.zIndex = '99999'
+        } else {
+        divs.push({
+          uid: element.getAttribute('data-uid'),
+          // zIndex: parseInt(element.getAttribute('data-z')) - 1
+          // zIndex: --z
+          zIndex: parseInt(window.getComputedStyle(element).zIndex)
+        })
+      }
+      });
+      divs.sort((a, b) => b.zIndex - a.zIndex)
+      divs.forEach((d: any) => {
+        (<HTMLElement>document.querySelectorAll(`[data-uid='${d.uid}']`)[0]).style.zIndex = (--z).toString()
+      }); 
+    }
+  }
 
   defineExpose({boundries,corners})
-// onBeforeMount(() => {
-//   debugger
-//   size.value = { x: props.width, y: props.height }
-// })
 
 onMounted(() => {
   size.value = { x: props.width, y: props.height }
@@ -385,6 +405,7 @@ onMounted(() => {
   thisDiv.value?.addEventListener('mousedown', (event: any) => {
         event.preventDefault()
         event.stopPropagation()
+        zIndexAdjust()
     if (resizeMode.value != '') {
       if (props.resizeable) {
         emit('resizeStart')
@@ -407,7 +428,6 @@ onMounted(() => {
     x: props.left == null ? rect.left : props.left,
     y: props.top == null ? rect.top : props.top,
   }
-  // setParentInfo()
   //@ts-expect-error Type 'undefined' is not assignable to type 'Element'.
   const s = window.getComputedStyle(thisDiv.value)
   borders.value = {
@@ -416,7 +436,6 @@ onMounted(() => {
     right: parseInt(s.borderRight.replace('px', '')),
     top: parseInt(s.borderTop.replace('px', '')),
   }
-  // setBoundries()
   if (props.dragOn != '') {
     const dragItem =
       props.dragOn == '' ? thisDiv.value : thisDiv.value?.querySelectorAll(props.dragOn)
@@ -425,15 +444,14 @@ onMounted(() => {
       di.addEventListener('mousedown', (event: any) => {
         event.preventDefault()
         event.stopPropagation()
+        zIndexAdjust()
         selected.value = 'drag'
-        //   touched.value = true
         clickedAtPosition.value = { x: event.pageX, y: event.pageY }
         divPosWhenClicked.value = divPos.value
       })
     })
   }
   nextTick().then(() => {
-    debugger
     if(props.width == -1){
       //@ts-expect-error not assignable to type element
       const a = window.getComputedStyle(thisDiv.value)
@@ -446,6 +464,7 @@ onMounted(() => {
     }
     setParentInfo()
     setBoundries()
+    zIndexAdjust()
   })
 })
 
@@ -478,6 +497,7 @@ watch(
       props.draggable && props.dragOn == '' ? 'draggable' : '',
       props.resizeable ? 'resizable' : '',
     ]"
+    :data-uid="thisInstance?.uid"
   >
     <slot></slot>
   </div>
@@ -490,7 +510,6 @@ watch(
   position: v-bind(cssPosition);
   left: v-bind(cssLeft) !important;
   top: v-bind(cssTop) !important;
-  //   }
   &.draggable,
   :deep(.draggable) {
     cursor: move;

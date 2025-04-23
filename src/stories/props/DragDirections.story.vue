@@ -20,7 +20,7 @@ const d = ref(['x'])
 </template>
 
 <docs lang="md">
-## Basic component
+## Drag Directions
 </docs>
 
 <style lang="scss">

@@ -26,7 +26,7 @@ const dragging = ref(0),
 </template>
 
 <docs lang="md">
-## Basic component
+## Dragging
 </docs>
 
 <style lang="scss">

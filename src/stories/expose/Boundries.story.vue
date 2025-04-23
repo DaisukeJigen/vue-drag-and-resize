@@ -15,7 +15,7 @@ main = ref()
 </template>
 
 <docs lang="md">
-## Basic component
+## Boundries
 </docs>
 
 <style lang="scss">

@@ -13,7 +13,7 @@ main = ref()
 </template>
 
 <docs lang="md">
-## Basic component
+## Corners
 </docs>
 
 <style lang="scss">

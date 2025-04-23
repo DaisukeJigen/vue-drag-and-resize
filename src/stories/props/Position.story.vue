@@ -31,7 +31,7 @@ const p = ref('absolute')
 </template>
 
 <docs lang="md">
-## Basic component
+## Position
 </docs>
 
 <style lang="scss">

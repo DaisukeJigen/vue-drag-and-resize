@@ -30,7 +30,7 @@ const b = ref(200),
 </template>
 
 <docs lang="md">
-## Basic component
+## Gutters
 </docs>
 
 <style lang="scss">

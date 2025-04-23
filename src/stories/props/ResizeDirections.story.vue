@@ -20,7 +20,7 @@ const rd = ref(['l', 'r', 'u', 'd', 'ul', 'ur', 'dl', 'dr'])
 </template>
 
 <docs lang="md">
-## Basic component
+## Resize Directions
 </docs>
 
 <style lang="scss">

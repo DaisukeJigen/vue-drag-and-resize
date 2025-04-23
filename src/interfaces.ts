@@ -21,4 +21,9 @@ interface iXY {
   y: number
 }
 
-export type { iBoundries, iCorners, iXY }
+interface iZindexInfo {
+    uid: string,
+    zIndex: number
+}
+
+export type { iBoundries, iCorners, iXY, iZindexInfo }

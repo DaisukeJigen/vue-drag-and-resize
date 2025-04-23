@@ -3,7 +3,7 @@ import DragAndResize from '@/components/DragAndResize.vue'
 </script>
 
 <template>
-  <Story auto-props-disabled title="Basic component">
+  <Story auto-props-disabled title="Basic Component">
     <DragAndResize id="main">
       <span>I can move and resize</span>
       </DragAndResize>

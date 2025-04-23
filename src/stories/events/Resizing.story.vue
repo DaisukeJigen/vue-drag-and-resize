@@ -26,7 +26,7 @@ const endProduct = ref(),
 </template>
 
 <docs lang="md">
-## Basic component
+## Resizing
 </docs>
 
 <style lang="scss">

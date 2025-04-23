@@ -16,7 +16,7 @@ const d = ref(true)
 </template>
 
 <docs lang="md">
-## Basic component
+## Draggable
 </docs>
 
 <style lang="scss">

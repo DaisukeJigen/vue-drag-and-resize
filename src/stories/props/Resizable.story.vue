@@ -16,7 +16,7 @@ const r = ref(true)
 </template>
 
 <docs lang="md">
-## Basic component
+## Resizable
 </docs>
 
 <style lang="scss">

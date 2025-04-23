@@ -18,7 +18,7 @@ const d = ref('#header')
 </template>
 
 <docs lang="md">
-## Basic component
+## Drag On
 </docs>
 
 <style lang="scss">
